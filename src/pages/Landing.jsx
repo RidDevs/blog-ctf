@@ -138,7 +138,7 @@ export default function ArticlePage() {
         justifyContent: "center", gap: "3rem", padding: "0 2rem", height: 56,
       }}>
         <span style={{ color: "#888", fontSize: "0.78rem", letterSpacing: "0.05em", fontStyle: "italic" }}>
-          This is an example blog built for demonstration purposes — not a real publication.
+          THINK IN THE BOX TO FIND THE FLAG
         </span>
       </nav>
     </div>
