@@ -129,7 +129,70 @@ export default function ArticlePage() {
         ))}
       </div>
     
+<section
+  style={{
+    background: "#ffffff",
+    padding: "4rem 2rem",
+    color: "#111"
+  }}
+>
+  <div
+    style={{
+      maxWidth: 1000,
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "40% 60%",
+      gap: "2rem",
+      alignItems: "center"
+    }}
+  >
+    {/* Left Image */}
+    <div>
+      <img
+        src="./images/3.jpg"
+        alt="About Priyam"
+        style={{
+          width: "100%",
+          borderRadius: "10px",
+          objectFit: "cover"
+        }}
+      />
+    </div>
 
+    {/* Right Text */}
+    <div>
+      <h2
+        style={{
+          fontFamily: "'Barlow Condensed', sans-serif",
+          fontSize: "2rem",
+          marginBottom: "1rem"
+        }}
+      >
+        About Me
+      </h2>
+
+      <p style={{ lineHeight: 1.8, marginBottom: "1rem" }}>
+        Hi, I'm Priyam. I was born in 2003 and have always been curious about
+        how systems work beneath the surface. That curiosity eventually turned
+        into a deep interest in cybersecurity, ethical hacking, and digital
+        forensics.
+      </p>
+
+      <p style={{ lineHeight: 1.8, marginBottom: "1rem" }}>
+        I enjoy exploring vulnerabilities, studying attack vectors, and
+        understanding how small details can reveal much bigger truths. In
+        security, the smallest piece of information can unlock everything.
+      </p>
+
+      <p style={{ lineHeight: 1.8, fontStyle: "italic", color: "#444" }}>
+        Sometimes the answer is personal.  
+        Sometimes you need to add it up.  
+        But the answe is here.
+        Find the answer and you're let in.
+      </p>
+    </div>
+  </div>
+</section>
 
 
 
