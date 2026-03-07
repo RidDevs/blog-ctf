@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const tags = ["AI", "CYBERSECURITY"];
 
@@ -10,37 +10,18 @@ const paragraphs = [
 const placeholderImages = ["Early Days"];
 
 export default function ArticlePage() {
-  const [cursor, setCursor] = useState({ x: -200, y: -200 });
-  const [clicking, setClicking] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
-
-  useEffect(() => {
-    const move = (e) => setCursor({ x: e.clientX, y: e.clientY });
-    const down = () => setClicking(true);
-    const up = () => setClicking(false);
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mousedown", down);
-    window.addEventListener("mouseup", up);
-    return () => {
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("mousedown", down);
-      window.removeEventListener("mouseup", up);
-    };
-  }, []);
 
   const scrollToAbout = (e) => {
     e.preventDefault();
     document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const size = clicking ? 26 : 34;
-  const color = "#00e676";
-
   return (
     <div style={{ fontFamily: "'Barlow', sans-serif", minHeight: "100vh", background: "linear-gradient(160deg, #001a2e 0%, #00111f 40%, #000a12 100%)", color: "#0a0a0a" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@700;900&display=swap');
-        * { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
+        * { box-sizing: border-box; margin: 0; padding: 0; cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='24' viewBox='0 0 20 24'%3E%3Cpolygon points='0,0 0,20 5,15 9,24 12,23 8,14 15,14' fill='%2300e676' stroke='%23003a1a' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0, auto !important; }
 
         @keyframes fadeInLeft {
           from { opacity: 0; transform: translateX(-24px); }
@@ -50,44 +31,8 @@ export default function ArticlePage() {
           from { opacity: 0; }
           to   { opacity: 1; }
         }
-        @keyframes scanline-sweep {
-          0%   { top: -6px; }
-          100% { top: 100%; }
-        }
-
         .hero-text       { animation: fadeInLeft 0.7s ease both; }
         .hero-image-wrap { animation: fadeIn 0.9s ease 0.1s both; }
-
-        .scanlines {
-          pointer-events: none;
-          position: absolute;
-          inset: 0;
-          z-index: 10;
-          background: repeating-linear-gradient(
-            to bottom,
-            transparent 0px,
-            transparent 3px,
-            rgba(0,0,0,0.11) 3px,
-            rgba(0,0,0,0.11) 4px
-          );
-        }
-        .scanline-sweep {
-          pointer-events: none;
-          position: absolute;
-          left: 0; right: 0;
-          height: 5px;
-          background: linear-gradient(to bottom, transparent, rgba(0,230,118,0.25), transparent);
-          animation: scanline-sweep 3.8s linear infinite;
-          z-index: 11;
-        }
-
-        #crosshair {
-          position: fixed;
-          pointer-events: none;
-          z-index: 99999;
-          transform: translate(-50%, -50%);
-          transition: width 0.08s, height 0.08s;
-        }
 
         @keyframes popIn {
           from { opacity: 0; transform: translateX(-12px) scale(0.85); }
@@ -215,26 +160,6 @@ export default function ArticlePage() {
         }
       `}</style>
 
-      {/* ── CUSTOM CROSSHAIR CURSOR ── */}
-      <svg
-        id="crosshair"
-        style={{ left: cursor.x, top: cursor.y, width: size, height: size }}
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="20" cy="20" r="14" stroke={color} strokeWidth={clicking ? "1" : "1.2"} opacity="0.65" />
-        <line x1="20" y1="1"  x2="20" y2="9"  stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
-        <line x1="20" y1="31" x2="20" y2="39" stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
-        <line x1="1"  y1="20" x2="9"  y2="20" stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
-        <line x1="31" y1="20" x2="39" y2="20" stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="20" cy="20" r={clicking ? "1.8" : "2.6"} fill={color} opacity="0.95"/>
-        <path d="M7 7 L11 7 L7 11"  stroke={color} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.55"/>
-        <path d="M33 7 L29 7 L33 11" stroke={color} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.55"/>
-        <path d="M7 33 L11 33 L7 29" stroke={color} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.55"/>
-        <path d="M33 33 L29 33 L33 29" stroke={color} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.55"/>
-      </svg>
-
       {/* ── SOCIAL SHARE FLOATER ── */}
       {(() => {
         const socials = [
@@ -349,7 +274,7 @@ export default function ArticlePage() {
         minHeight: "calc(100vh - 56px)", maxHeight: 720,
         position: "relative",
       }}>
-        {/* Left panel with scanlines */}
+        {/* Left panel */}
         <div className="hero-text" style={{
           padding: "3.5rem 3rem 3rem",
           background: "linear-gradient(160deg, rgba(0,60,80,0.72) 0%, rgba(0,30,55,0.85) 60%, rgba(0,10,25,0.95) 100%)",
@@ -425,7 +350,7 @@ export default function ArticlePage() {
             <p style={{ lineHeight: 1.8, fontStyle: "italic", color: "#666", fontSize: "0.93rem", marginBottom: 0 }}>
               Sometimes the answer is personal.{" "}
               Sometimes you need to add it up.{" "}
-              But the answer is here. Find the answer and you're let in.
+              But the answe is here. Find the answer and you're let in.
             </p>
             <div className="contact-card">
               <div style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#00b359", marginBottom: "0.25rem" }}>Get in Touch</div>
