@@ -425,7 +425,7 @@ export default function ArticlePage() {
             <p style={{ lineHeight: 1.8, fontStyle: "italic", color: "#666", fontSize: "0.93rem", marginBottom: 0 }}>
               Sometimes the answer is personal.{" "}
               Sometimes you need to add it up.{" "}
-              But the answe is here. Find the answer and you're let in.
+              But the answer is here. Find the answer and you're let in.
             </p>
             <div className="contact-card">
               <div style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#00b359", marginBottom: "0.25rem" }}>Get in Touch</div>
