@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const name = "Priyam";
 const dob = "2003";
@@ -8,7 +9,8 @@ export default function Dashboard() {
   const [password, setPassword] = useState("");
   const [flag, setFlag] = useState("");
   const [cleared, setCleared] = useState(false);
-
+  const navigate = useNavigate();
+  
   const handleGenerate = () => {
     const correctPassword = `${name}${dob}`;
     if (password.trim() === correctPassword) {
@@ -18,6 +20,10 @@ export default function Dashboard() {
       alert("Incorrect password.");
     }
   };
+
+  const goToRound3 = () => {
+  window.location.href = "/round3"; 
+};
 
   const sharedPage = (children) => (
     <div style={{
@@ -157,27 +163,25 @@ export default function Dashboard() {
       {/* Divider */}
       <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(0,230,118,0.2), transparent)", margin: "1.2rem 0" }}/>
 
-      {!cleared && (
-        <>
-          <p style={{ lineHeight: 1.7, color: "rgba(255,255,255,0.6)", fontSize: "0.95rem" }}>
-            You found the first flag.<br/>
-            Enter the password again to generate the final flag.
-          </p>
-
-          <input
-            type="password"
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleGenerate()}
-            className="dash-input"
-          />
-
-          <button onClick={handleGenerate} className="dash-btn">
-            Generate Flag
-          </button>
-        </>
-      )}
+      
+<p style={{
+  lineHeight: 1.8,
+  color: "#00e676",
+  fontSize: "1.35rem",
+  fontWeight: 900,
+  letterSpacing: "0.08em",
+  fontFamily: "'Barlow Condensed', sans-serif",
+  textTransform: "uppercase",
+  textShadow: "0 0 12px rgba(0,230,118,0.6)",
+  marginBottom: "1.4rem"
+}}>
+  ⛳ FLAG FOUND<br/>
+  ROUND 2 CLEARED
+</p>
+<button onClick={() => navigate("/round3")} className="dash-btn">
+  Go To Round 3
+</button>
+ 
 
       {flag && (
         <div className="flag-box" style={{
