@@ -10,7 +10,7 @@ export default function Dashboard() {
   const [flag, setFlag] = useState("");
   const [cleared, setCleared] = useState(false);
   const navigate = useNavigate();
-  
+
   const handleGenerate = () => {
     const correctPassword = `${name}${dob}`;
     if (password.trim() === correctPassword) {
@@ -22,7 +22,7 @@ export default function Dashboard() {
   };
 
   const goToRound3 = () => {
-  window.location.href = "/round3"; 
+  window.location.href = "/r3-final"; 
 };
 
   const sharedPage = (children) => (
@@ -178,7 +178,7 @@ export default function Dashboard() {
   ⛳ FLAG FOUND<br/>
   ROUND 2 CLEARED
 </p>
-<button onClick={() => navigate("/round3")} className="dash-btn">
+<button onClick={() => navigate("/r3-final")} className="dash-btn">
   Go To Round 3
 </button>
  

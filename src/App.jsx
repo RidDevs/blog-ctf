@@ -11,7 +11,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/round3" element={<Round3 />} />
+        <Route path="/r3-final" element={<Round3 />} />
       </Routes>
     </HashRouter>
   );

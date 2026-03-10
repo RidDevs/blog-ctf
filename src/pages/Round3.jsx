@@ -81,7 +81,7 @@ export default function round3() {
       }
 
       /* hidden container stays hidden */
-      .hidden-container{
+      .input{
         display:none;
       }
 
@@ -203,6 +203,7 @@ export default function round3() {
 
   <p style={{color:"rgba(255,255,255,0.6)", marginTop:"10px"}}>
     Something is hidden on this page.
+    <br></br>Search Carefully
   </p>
 
 
@@ -301,7 +302,7 @@ export default function round3() {
 
 
   {/* Hidden input container */}
-  <div className="hidden-container" id="flagForm">
+  <div className="input" id="flagForm">
 
     <input
       type="text"
@@ -312,7 +313,7 @@ export default function round3() {
     />
 
     <button onClick={handleSubmit} className="btn">
-      Submit Flag
+      Submit 
     </button>
 
   </div>
