@@ -342,15 +342,13 @@ export default function ArticlePage() {
               <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "2.2rem", fontWeight: 900, letterSpacing: "-0.01em", color: "#0a0a0a" }}>About Me</h2>
             </div>
             <p style={{ lineHeight: 1.8, marginBottom: "1rem", color: "#333", fontSize: "0.97rem" }}>
-              Hi, I'm Priyam. I was born in 2003 and have always been curious about how systems work beneath the surface. That curiosity eventually turned into a deep interest in cybersecurity, ethical hacking, and digital forensics.
+             Hi, I'm Priyam. I was born in 2003 and I have a pet cat named Tom. I have always been curious about how systems work beneath the surface.That curiosity eventually turned into a deep interest in cybersecurity, ethical hacking, and digital forensics.
             </p>
             <p style={{ lineHeight: 1.8, marginBottom: "1rem", color: "#333", fontSize: "0.97rem" }}>
               I enjoy exploring vulnerabilities, studying attack vectors, and understanding how small details can reveal much bigger truths. In security, the smallest piece of information can unlock everything.
             </p>
             <p style={{ lineHeight: 1.8, fontStyle: "italic", color: "#666", fontSize: "0.93rem", marginBottom: 0 }}>
-              Sometimes the answer is personal.{" "}
-              Sometimes you need to add it up.{" "}
-              But the answer is here. Find the answer and you're let in.
+              (Note to myself; ignore if you are not me: Contacts for this site are broken. So login later and add them.)
             </p>
             <div className="contact-card">
               <div style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#00b359", marginBottom: "0.25rem" }}>Get in Touch</div>

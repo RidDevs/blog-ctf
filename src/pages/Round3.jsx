@@ -199,15 +199,28 @@ export default function round3() {
 
   <div className="card">
 
-  <h1 className="title">Round 3</h1>
+ <h1 
+  className="title"
+  style={{ fontSize: "48px", fontWeight: "700" }}
+>
+  Round 3
+</h1>
 
-  <p style={{color:"rgba(255,255,255,0.6)", marginTop:"10px"}}>
-    Something is hidden on this page.
-    <br></br>Search Carefully
-  </p>
+<p 
+  style={{
+    color: "rgba(255,255,255,0.6)",
+    marginTop: "10px",
+    fontSize: "20px",
+    lineHeight: "1.6"
+  }}
+>
+  Only a keen Inspector can <br />
+  display what none can
+  <br />
+  Search Carefully
+</p>
 
-
-  {/* Hidden misleading structures */}
+ 
   <div className="layer-root" style={{display:"none"}}>
 
     <div className="layer-a">
@@ -262,7 +275,7 @@ export default function round3() {
     </div>
 
 
-    {/* Deep nested real flag */}
+
     <div className="layer-x">
       <div className="layer-y">
         <div className="layer-z">
@@ -278,9 +291,8 @@ export default function round3() {
                           <div>
                             <div>
 
-                              {/* Hidden flag */}
                               <div id="deep-secret-pass">
-                                {"FLAG{inspectkey76acb34bd23}"}
+                                {"inspectkey76acb34bd23"}
                               </div>
 
                             </div>
@@ -302,7 +314,7 @@ export default function round3() {
 
 
   {/* Hidden input container */}
-  <div className="input" id="flagForm">
+  <div className="input" id="flag-input">
 
     <input
       type="text"

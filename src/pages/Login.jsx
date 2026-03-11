@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const name = "Priyam";
+const pet = "Tom";
 const dob = "2003";
 
 export default function Login() {
@@ -9,7 +9,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const correctPassword = `${name}${dob}`;
+    const correctPassword = `${dob}${pet}`;
     if (password === correctPassword) {
       localStorage.setItem("auth", "true");
       navigate("/dashboard");
