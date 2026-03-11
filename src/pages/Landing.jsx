@@ -354,12 +354,12 @@ export default function ArticlePage() {
               <div style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#00b359", marginBottom: "0.25rem" }}>Get in Touch</div>
               <div className="contact-item">
                 <div className="contact-icon">✉️</div>
-                <span className="contact-text">abcdxxy99@gmail.com</span>
+                <span className="contact-text">tom@gmail.com</span>
               </div>
               <div style={{ height: 1, background: "rgba(0,0,0,0.06)" }} />
               <div className="contact-item">
                 <div className="contact-icon">📞</div>
-                <span className="contact-text">1234567890</span>
+                <span className="contact-text">2003-200-2003</span>
               </div>
             </div>
           </div>
